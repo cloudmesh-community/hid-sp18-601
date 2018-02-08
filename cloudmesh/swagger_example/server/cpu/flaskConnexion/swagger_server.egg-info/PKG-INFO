@@ -1,0 +1,13 @@
+Metadata-Version: 1.0
+Name: swagger-server
+Version: 1.0.0
+Summary: cpuinfo
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Description-Content-Type: UNKNOWN
+Description:     A simple service to get cpuinfo as an example of using swagger-2.0 specification and codegen
+            
+Keywords: Swagger,cpuinfo
+Platform: UNKNOWN
