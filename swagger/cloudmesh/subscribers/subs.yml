@@ -1,0 +1,38 @@
+swagger: "2.0"
+info: 
+  version: "0.0.1"
+  title: "subscriber api"
+  description: "simple api for subscribers"
+  termsOfService: "http://swagger.io/terms/"
+  contact: 
+    name: "Cloudmesh community"
+  license: 
+    name: "Apache"
+host: "localhost:8080"
+basePath: "/api"
+schemes: 
+  - "http"
+consumes: 
+  - "application/json"
+produces: 
+  - "application/json"
+paths: 
+  /Sub:
+    post:
+      description: 'creates or updates subscriber with name sub_name'
+      operationID: createSubscriber
+      produces:
+        - 'application/json'
+      parameters:
+        - name: sub_name
+definitions:
+  Sub:
+    type: "object"
+    required: 
+      - "name"
+      - "email"
+    properties: 
+      name:
+        type: 'string'
+      email:
+        type: 'string'
