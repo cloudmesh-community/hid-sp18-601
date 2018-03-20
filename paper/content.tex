@@ -34,20 +34,96 @@ has succeded completly. SETI$@$Home was inspiration for several similar projects
 \section{Background}
 
 \section{How it works}
-
+\label{hid-sp18-601-section-howworks}
+\subsection{Data distribution to the network of nodes}
+\label{hid-sp18-601-subsection-data-dist}
 The data comes from the Arecibo radio telescope in Puerto Rico. As the facility
 does not have high speed internet the data must first be send by regular mail to
  Berkeley~\cite{hid-sp18-601-www-sathome-howworks}. Once there the data is 
- diveded in "work units", which size is 250 kibibytes, and distributed to the 
- colaborator's computers on the network.
+ divided in "work units", which size is 250 kibibytes, and distributed to the 
+ collaborators' computers on the network.
 
-The data to be analized are radio waves. The frequency range of the waves 
+The data to be analyzed are radio waves. The frequency range of the waves 
 analized in the SETI$@$Home project is from 1418MHz to 1421MHz organized in 
 10Khz pieces~\cite{hid-sp18-601-paper-anderson2002seti}. A work unit is 100 
 seconds of the recording of one of this 
-slices~\cite{hid-sp18-601-www-sathome-howworks}.
- 
+slices~\cite{hid-sp18-601-www-sathome-howworks}. How the data is to be analyzed 
+will be discussed in subsection \ref{hid-sp18-601-subsection-nodes-work}.
 
+Once the data is separated into work units the work units are sent to a work 
+unit storage and a database server~\cite{hid-sp18-601-book-foster1999carl}. 
+The database and storage communicate with a data/result server, responsible for 
+communicating with the nodes, and a garbage collector, responsible for 
+removing flagged data from the 
+storage
+~\cite{hid-sp18-601-book-foster1999carl,hid-sp18-601-paper-anderson2002seti}.
+
+The SETI$@$home team has tried two method for selecting works units to be 
+deleted. One of them is to delete units that have received \textit{N} results,
+where \textit{N} is a result redundancy target. This method of deletion might 
+be slower than the creation of new work units, filling up the storage and 
+halting the creation of new work 
+units~\cite{hid-sp18-601-paper-anderson2002seti}.
+
+Because of this bottleneck the method has been changed to be as follows: 
+If a work unit has had results received \textit{N} times and has been sent 
+\textit{M} times (where $M>N$) it is selected for 
+deletion~\cite{hid-sp18-601-paper-anderson2002seti}. This method has 
+a downside of some work units never producing results. The fraction of work
+units that don't produce results can be made small by increasing \textit{M}.
+
+The nodes get new work units as soon as they return the results for the 
+previous one. Once the results return to the main server they are recorder 
+and further analyzed. Result handling has two functions, one is to 
+get the scientific results~\cite{hid-sp18-601-paper-anderson2002seti}. 
+Compare the results about a work unit from several nodes, to see if there 
+is consensus and catch malicious results. 
+If the results from different nodes are similar but not identical a 
+representative result is chosen.
+
+The other function of result handling is accounting. The server creates 
+log entries with information about the node, it's CPU type and user for 
+instance. This is done both to flag malicious users and give credit for
+the users that found an alien signal~\cite{hid-sp18-601-paper-anderson2002seti}.
+
+This results are sent to a online database and a scientific database. They are 
+then further analized by the SETI team.
+\subsection{Nodes work}
+\label{hid-sp18-601-subsection-nodes-work}
+Once the nodes have their data they start the analysis by fixing possible 
+Doppler shifts. This is the most time consuming task, as the signal needs to be 
+broken down into units of Hz and nHz, this units are $10^{-3}$ to $10^{-6}$ 
+times smaller than the original signal, and shifter by a few 
+nHz~\cite{hid-sp18-601-www-sathome-howworks}. Once the signal is free of Doppler
+ effects the node starts to search for a signal compatible with an 
+extra-terrestrial source
+~\cite{hid-sp18-601-www-sathome-howworks,hid-sp18-601-paper-cocconi1959searching}.
+
+This very fine Doppler de-shifting may actually over shift the 
+signal~\cite{hid-sp18-601-www-sathome-howworks}, so the whole
+process is done again with a less fine de-shifting. This is done until the 
+de-shifting
+is done in units of 1200Hz. This first set of analysis totals over 275 billion 
+operations for one work unit.
+
+Signals that show a possibility of being of extra-terrestrial, \textit{i.e.} 
+have a strong power for a combination of the aforementioned parameters, are then 
+ checked for human contamination. The signal must be 
+a Gaussian with a 12 second period~\cite{hid-sp18-601-paper-anderson2002seti}.
+
+This process is only for finding continuous signals, as the extra-terrestrial 
+signals could be pulsating. This means that special tests have to be applied 
+to the signal~\cite{hid-sp18-601-www-sathome-howworks}. One of said tests is 
+to look for triplets of peaks, the other test
+used was developed by the SET$@$Home team. It's a modification of the 
+"fast folding algorithm"~\cite{hid-sp18-601-paper-korpela2001seti}.
+This algorithm is capable of detecting signals that would be lost in the noise.
+
+In total, a node will perform between 2.5 trillion and 3.8 trillion operations 
+for each work unit~\cite{hid-sp18-601-www-sathome-howworks}. 
+This massive amount of operations can only be realistically 
+be done by either a super-computer (costly) or a huge cloud of computers. As the
+ computers are volunteers this method has almost no cost.
 \section{Best Practices}
 
 
