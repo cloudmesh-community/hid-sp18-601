@@ -30,17 +30,33 @@ has succeded completly. SETI$@$Home was inspiration for several similar projects
 \maketitle
 
 \section{Introduction}
-
+\label{hid-sp18-601-section-introduction}
 SETI (Search for Extra Terrestrial Intelligence) is a research institute that 
 searches for signals of extra-terrestrial 
 life~\cite{hid-sp18-601-paper-cocconi1959searching}. It does this mostly by 
-listening to radio signals that are not human made and are not natural. 
+listening to radio signals and trying to determine if they are not human made 
+and neither are natural. 
 
-\section{Background}
+As any signal coming from another sapient form of life would come from great 
+distances it would be a very weak signal. In addition most of the signal picked 
+up by a radio telescope that is not man made is noise, from celestial bodies 
+and from the electronics of the equipment 
+itself~\cite{hid-sp18-601-paper-anderson2002seti}. All of this makes finding an 
+actual signal a hard endeavor, as the hypothetical alien radio message would be 
+buried in that noise.
+
+Due to the signal to noise ratio being so unfavorable SETI uses supercomputers 
+to make the bulk of their calculations. In 1995 using a network of volunteer 
+computers to make the calculations instead was 
+proposed~\cite{hid-sp18-601-book-foster1999carl}. They use CPU time that would
+be idle, meaning that users would not notice any performance difference on 
+their machines. Although cheaper than a super computer this approach is 
+not free. It requires a network bandwidth big enough
+to handle all of the data as well as maintenance of the servers. As the 
+program depends of volunteers the data sizes cannot be too large, as the users
+will have to download the data~\cite{hid-sp18-601-paper-anderson2002seti}.
 
 
-
-%put stuff here about the effects that happen to the 
 \section{How it works}
 \label{hid-sp18-601-section-howworks}
 \subsection{Data distribution to the network of nodes}
@@ -94,10 +110,17 @@ log entries with information about the node, it's CPU type and user for
 instance. This is done both to flag malicious users and give credit for
 the users that found an alien signal~\cite{hid-sp18-601-paper-anderson2002seti}.
 
-This results are sent to a online database and a scientific database. They are 
-then further analized by the SETI team.
+\subsection{Signal type and signal distortion}
+
+Transmitting a signal in many frequencies (broadband) is not efficient and increases the signal degradation.
+
 \subsection{Nodes work}
 \label{hid-sp18-601-subsection-nodes-work}
+The results that the nodes are looking for are candidates for alien signals.
+This candidates have to have positives from multiple machines and are then 
+verified by the SETI$@$home team in 
+Berkeley~\cite{hid-sp18-601-www-sathome-howworks}.
+
 Once the nodes have their data they start the analysis by fixing possible 
 Doppler shifts. This is the most time consuming task, as the signal needs to be 
 broken down into units of Hz and nHz, this units are $10^{-3}$ to $10^{-6}$ 
