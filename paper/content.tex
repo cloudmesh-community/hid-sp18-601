@@ -112,7 +112,35 @@ the users that found an alien signal~\cite{hid-sp18-601-paper-anderson2002seti}.
 
 \subsection{Signal type and signal distortion}
 
-Transmitting a signal in many frequencies (broadband) is not efficient and increases the signal degradation.
+As the degradation of a signal sent in many frequencies (broadband) is greater 
+than the degradation of a narrowband 
+signal~\cite{hid-sp18-601-www-sathome-interference} the SETI$@$home team looks
+ for the later to be candidates for alien 
+ signals~\cite{hid-sp18-601-www-sathome-howworks}. Another parameter that 
+ narrows the signal search is the form it has to have in time. As the telescope 
+ used by SETI$@$Home does not track the sky (meaning it is fixed) while looking 
+ for extra terrestrial signals the radio wave must rise and fall in strength 
+ over a period of twelve seconds, the amount of time any source object would 
+ take  to pass trough the focus of the 
+ telescope~\cite{hid-sp18-601-www-sathome-interference}. 
+ 
+ If the alien signal is transmitting any kind of information it will probably 
+ have it's strength modulated~\cite{hid-sp18-601-paper-gray1961radio}, that is
+ how AM and PM radio works. SET$@$Home program has to look for this kind of 
+ signal as well because of 
+ this~\cite{hid-sp18-601-www-sathome-howworks}, increasing the process 
+ complexity greatly.
+ 
+ A kind of distortion that will happen to signals that have traveled to Earth
+ is Doppler shift~\cite{hid-sp18-601-www-doppler-light}. Doppler shift is an 
+ effect that happens to waves when the 
+ source is moving relative to the receiver~\cite{hid-sp18-601-www-doppler}. 
+ It shifts the apparent frequency 
+ of the wave, meaning that the signal's starting frequency will differ from its 
+ ending frequency. SETI$@$home software has to account for this and do what 
+ is called "de-chirping", reverting the frequency change. However, as the 
+ amount of Doppler shift is unknown  the software has to "de-chirp" for several 
+ different amounts of shift~\cite{hid-sp18-601-www-sathome-howworks}.
 
 \subsection{Nodes work}
 \label{hid-sp18-601-subsection-nodes-work}
