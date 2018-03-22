@@ -56,13 +56,22 @@ program depends of volunteers the data sizes cannot be too large, as the users
 will have to download the data~\cite{hid-sp18-601-paper-anderson2002seti}.
 
 
-\section{How it works}\label{hid-sp18-601-section-howworks}
-\subsection{Data distribution to the network of nodes}\label{hid-sp18-601-subsection-data-dist}
+\section{How SETI$@$home distributes data and how the
+data is analysed}\label{hid-sp18-601-section-howworks}
+\subsection{Data distribution to the network
+of nodes}\label{hid-sp18-601-subsection-data-dist}
 The data comes from the Arecibo radio telescope in Puerto Rico. As the facility
 does not have high speed internet the data must first be send by regular mail to
  Berkeley~\cite{hid-sp18-601-www-sathome-howworks}. Once there the data is 
  divided in ``work units'', which size is 250 kibibytes, and distributed to the 
  collaborators' computers on the network.
+
+\begin{figure*}[!htb]
+        \centering
+        \includegraphics[width=0.35\textwidth]{figures/arecibo-to-net.jpg}
+        \caption{Data prepocess and
+        distribution~\cite{hid-sp18-601-paper-anderson2002seti}}\label{datasend}
+\end{figure*}
 
 The data to be analyzed are radio waves. The frequency range of the waves 
 analized in the SETI$@$Home project is from 1418MHz to 1421MHz organized in 
@@ -101,6 +110,13 @@ Compare the results about a work unit from several nodes, to see if there
 is consensus and catch malicious results. 
 If the results from different nodes are similar but not identical a 
 representative result is chosen.
+
+\begin{figure*}[!htb]
+        \centering
+        \includegraphics[width=0.35\textwidth]{figures/data-return.jpg}
+        \caption{Data prepocess and
+        distribution~\cite{hid-sp18-601-paper-anderson2002seti}}\label{datasend}
+\end{figure*}
 
 The other function of result handling is accounting. The server creates 
 log entries with information about the node, it's CPU type and user for 
