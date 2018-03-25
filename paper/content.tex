@@ -55,7 +55,13 @@ to handle all of the data as well as maintenance of the servers. As the
 program depends of volunteers the data sizes cannot be too large, as the users
 will have to download the data~\cite{hid-sp18-601-paper-anderson2002seti}.
 
-
+SET$@$Home is one of SETI's signal search 
+programs~\cite{hid-sp18-601-www-seti-programs}. Although SET$@$Home ends up 
+having the most computing power of all the programs it covers the lowest range 
+of frequencies. This is because of the fact that data has to be distributed. The 
+way SET$@$Home compensates this is by having the biggest frequency resolution of 
+the programs~\cite{hid-sp18-601-paper-korpela2001seti}. 
+ 
 \section{How SETI$@$home distributes data and how the
 data is analyzed}\label{hid-sp18-601-section-howworks}
 \subsection{Data distribution to the network
@@ -73,14 +79,14 @@ does not have high speed internet the data must first be send by regular mail to
         distribution~\cite{hid-sp18-601-paper-anderson2002seti}}\label{datasend}
 \end{figure*}
 
-The data to be analyzed are radio waves. The frequency range of the waves 
+The data to be analyzed are radio wave. The frequency range of the waves 
 analized in the SETI$@$Home project is from 1418MHz to 1421MHz organized in 
 10Khz pieces~\cite{hid-sp18-601-paper-anderson2002seti}. A work unit is 100 
 seconds of the recording of one of this 
 slices~\cite{hid-sp18-601-www-sathome-howworks}. How the data is to be analyzed 
 will be discussed in Subsection~\ref{hid-sp18-601-subsection-nodes-work}.
 
-Once the data is separated into work units the work units are sent to a work 
+Once the data is separated into work units they are sent to a work 
 unit storage and a database server~\cite{hid-sp18-601-book-foster1999carl}. 
 The database and storage communicate with a data/result server, responsible for 
 communicating with the nodes, and a garbage collector, responsible for 
@@ -88,8 +94,9 @@ removing flagged data from the
 storage
 ~\cite{hid-sp18-601-book-foster1999carl,hid-sp18-601-paper-anderson2002seti}.
 
-The SETI$@$home team has tried two method for selecting works units to be 
-deleted. One of them is to delete units that have received \textit{N} results,
+The SETI$@$home team has tried two methods for selecting works units to be 
+deleted. One of them is to delete units that have received \textit{N} results 
+back,
 where \textit{N} is a result redundancy target. This method of deletion might 
 be slower than the creation of new work units, filling up the storage and 
 halting the creation of new work 
@@ -100,7 +107,10 @@ If a work unit has had results received \textit{N} times and has been sent
 \textit{M} times (where $M>N$) it is selected for 
 deletion~\cite{hid-sp18-601-paper-anderson2002seti}. This method has 
 a downside of some work units never producing results. The fraction of work
-units that don't produce results can be made small by increasing \textit{M}.
+units that don't produce results can be made small by increasing \textit{M}. 
+Increasing \textit{M} too much, however, would result in the same 
+bottleneck~\cite{hid-sp18-601-paper-anderson2002seti}. If \textit{M} is set too 
+big, however, the bottleneck may continue.
 
 The nodes get new work units as soon as they return the results for the 
 previous one. Once the results return to the main server they are recorder 
@@ -119,11 +129,12 @@ representative result is chosen.
 \end{figure*}
 
 The other function of result handling is accounting. The server creates 
-log entries with information about the node, it's CPU type and user for 
-instance. This is done both to flag malicious users and give credit for
+log entries with information about the node, for instance it's CPU type and 
+user. This is done both to flag malicious users and give credit for
 the users that found an alien signal~\cite{hid-sp18-601-paper-anderson2002seti}.
 
-\subsection{Signal type and signal distortion}\label{hid-sp18-601-subsection-signal}
+\subsection{Signal type and signal 
+distortion}\label{hid-sp18-601-subsection-signal}
 \begin{figure*}[!htb]
         \centering
         \includegraphics[width=0.35\textwidth]{figures/broadband.pdf}
@@ -212,23 +223,32 @@ mentioned in Subsection~\ref{hid-sp18-601-subsection-signal}.
 This process is only for finding continuous signals, as the extra-terrestrial 
 signals could be pulsating. This means that special tests have to be applied 
 to the signal~\cite{hid-sp18-601-www-sathome-howworks}. One of said tests is 
-to look for triplets of peaks, the other test
+to look for triplets of peaks. 
+Detecting triplets is relatively easy, the program looks for pulses above a 
+threshold and for every pair of pulses it looks for another peak in between 
+them. 
+ The other test
 used was developed by the SET$@$Home team. It's a modification of the 
 ``fast folding algorithm''~\cite{hid-sp18-601-paper-korpela2001seti}.
 This algorithm is capable of detecting signals that would be lost in the noise.
+
 
 In total, a node will perform between 2.5 trillion and 3.8 trillion operations 
 for each work unit~\cite{hid-sp18-601-www-sathome-howworks}. 
 This massive amount of operations can only be realistically 
 be done by either a super-computer (costly) or a huge cloud of computers. As the
- computers are volunteers this method has almost no cost.
+ computers are volunteers this method has almost no cost. 
 
+
+ 
 \section{Conclusion}\label{hid-sp18-601-section-conclusions}
 
 SET$@$Home may not have yet found signs of extra terrestrial intelligence, it 
 has, however, managed to spurt the volunteer cloud computing movement. Over 50
 research initiatives use distributed 
-computing~\cite{hid-sp18-601-www-boinc-projects}.
+computing~\cite{hid-sp18-601-www-boinc-projects}. This enoumous success is, in a 
+way, hurting SET$@$Home, as it has to compete for volunteers. 
+
 
 The search for the alien signals might have some more issues with. As was 
 mentioned in~\ref{hid-sp18-601-subsection-signal} the kind of signals being 
