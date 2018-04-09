@@ -1,0 +1,48 @@
+\begin{figure*}[!htb]
+        \centering
+        \includegraphics[width=0.35\textwidth]{figures/arecibo-to-net.jpg}
+        \caption{Data prepocess and
+        distribution~\cite{hid-sp18-601-paper-anderson2002seti}}\label{datasend}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[!htb]
+        \centering
+        \includegraphics[width=0.35\textwidth]{figures/data-return.jpg}
+        \caption{Data prepocess and
+        distribution~\cite{hid-sp18-601-paper-anderson2002seti}}\label{datasend}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[!htb]
+        \centering
+        \includegraphics[width=0.35\textwidth]{figures/broadband.pdf}
+        \caption{Example of a gaussian boadband
+        signal~\cite{hid-sp18-601-www-sathome-howworks}}\label{broadbandfigure}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[!htb]
+        \centering
+        \includegraphics[width=0.35\textwidth]{figures/narrow.pdf}
+        \caption{Example of a gaussian narrowband
+        signal~\cite{hid-sp18-601-www-sathome-howworks}}\label{broadbandfigure}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[!htb]
+        \centering
+        \includegraphics[width=0.35\textwidth]{figures/narrow_pulsed.pdf}
+        \caption{Example of a gaussian narrowband
+        signal~\cite{hid-sp18-601-www-sathome-howworks}}\label{narrowbandfigure}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[!htb]
+        \centering
+        \includegraphics[width=0.35\textwidth]{figures/narrow_chirped.pdf}
+        \caption{Example of a gaussian narrowband
+        signal~\cite{hid-sp18-601-www-sathome-howworks}}\label{dopplerfigure}
+\end{figure*}
+\efloatseparator
+ 
