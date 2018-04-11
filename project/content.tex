@@ -28,11 +28,28 @@ CompuCell3D is a Cellular Potts Model simulator.
 
 \section{Introduction}\label{hid-sp18-601-project-section-introduction}
 
-CompuCell3D uses a modified Metropolis Algorithm to simulate cellular 
+CompuCell3D uses Cellular Potts Model (CPM) to simulate systems containing 
+cell 
 structures~\cite{hid-sp18-601-paper-swat2012multi}, be them biological or not.
- 
- 
+ In it cells are made up of voxels, each cell has an unique ID and have energies
+ associated with it~\cite{hid-sp18-601-paper-glazier1993simulation}.
+
+The biological system for which CPM was developed was the separation of hydra 
+tissues~\cite{hid-sp18-601-paper-glazier1993simulation}. The energy hamiltonian 
+for this system had to have contact energy in order for the cells to separate. 
+Since cells have a typical volume it also had to have an energy term related to 
+the cells' volume, so that they would not  deviate much from it or disapear. 
+It is
+\begin{equation}\label{hid-sp18-601-equation-cpm-orig-hamiltonian}
+H = \sum_i \sum_{j_v} J(\tau_{\sigma(i)},\tau_{\sigma(j)
+})(1 - \delta(\sigma_i,\sigma_j)) + \sum_{c}\lambda_{c}\left(V_{c
+} - V^{TG}_{c}\right)^2\,\,.
+\end{equation}
+
+
 \section{}\label{}
+
+
 
 \subsection{}\label{}
 
