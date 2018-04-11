@@ -41,11 +41,14 @@ Since cells have a typical volume it also had to have an energy term related to
 the cells' volume, so that they would not  deviate much from it or disapear. 
 It is
 \begin{equation}\label{hid-sp18-601-equation-cpm-orig-hamiltonian}
-H = \sum_i \sum_{j_v} J(\tau_{\sigma(i)},\tau_{\sigma(j)
+H = \sum_i \sum_{j_n} J(\tau_{\sigma(i)},\tau_{\sigma(j)
 })(1 - \delta(\sigma_i,\sigma_j)) + \sum_{c}\lambda_{c}\left(V_{c
 } - V^{TG}_{c}\right)^2\,\,.
 \end{equation}
-
+The first term is the contact energy, the second volume energy. In the first 
+term the double sum is made on cell pixels and that pixel neighbours. In 
+the second term the sum is made on cells. The energy magnitude is defined
+by \textit{J} and $\lambda$.
 
 \section{}\label{}
 
