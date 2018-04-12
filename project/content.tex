@@ -1,7 +1,7 @@
 % status:
 % chapter: 
 
-\title{Restfull container for CompuCell3D}
+\title{Restful container for CompuCell3D}
 
 \author{Juliano Ferrari Gianlupi}
 \affiliation{%
@@ -21,7 +21,7 @@ CompuCell3D is a Cellular Potts Model simulator.
  
 \end{abstract}
 
-\keywords{hid-sp18-601, project, restfull-compucell-3d}
+\keywords{hid-sp18-601, project, restful-compucell-3d}
 
 
 \maketitle
@@ -35,24 +35,37 @@ structures~\cite{hid-sp18-601-paper-swat2012multi}, be them biological or not.
  associated with it~\cite{hid-sp18-601-paper-glazier1993simulation}.
 
 The biological system for which CPM was developed was the separation of hydra 
-tissues~\cite{hid-sp18-601-paper-glazier1993simulation}. The energy hamiltonian 
+tissues~\cite{hid-sp18-601-paper-glazier1993simulation}. The energy Hamiltonian 
 for this system had to have contact energy in order for the cells to separate. 
 Since cells have a typical volume it also had to have an energy term related to 
-the cells' volume, so that they would not  deviate much from it or disapear. 
-It is
+the cells' volume, so that they would not  deviate much from it or disappear. 
+The explicit Hamiltonian is shown in Equation 
+\ref{hid-sp18-601-equation-cpm-orig-hamiltonian}.
 \begin{equation}\label{hid-sp18-601-equation-cpm-orig-hamiltonian}
 H = \sum_i \sum_{j_n} J(\tau_{\sigma(i)},\tau_{\sigma(j)
 })(1 - \delta(\sigma_i,\sigma_j)) + \sum_{c}\lambda_{c}\left(V_{c
 } - V^{TG}_{c}\right)^2\,\,.
 \end{equation}
-The first term is the contact energy, the second volume energy. In the first 
-term the double sum is made on cell pixels and that pixel neighbours. In 
+The first term in the Hamiltonian is the contact energy, the second volume
+ energy. In the first 
+term the double sum is made on cell pixels and that pixel neighborhoods, in here
+the neighborhood is not necessarily only the first neighbors. In 
 the second term the sum is made on cells. The energy magnitude is defined
 by \textit{J} and $\lambda$.
 
-\section{}\label{}
+CPM's Hamiltonian can be expanded with any kind 
+of energy. Cellular Potts Model also can have a chemical field in a secondary 
+pixel lattice.
 
-
+The way the system evolves is by the Metropolis 
+algorithm~\cite{hid-sp18-601-paper-metropolis1953equation}. This algorithm 
+is based on attempting to change the pixel's owner.
+ The first step is to randomly select one 
+pixel and one of this pixel's first neighbors. If the pixels don't belong to 
+the same cell an exchange attempt is made. The energy of the system is 
+calculated before and after the pixel exchange. If the energy diminishes
+the attempt is accepted, if it increases the exchange may still be accepted,
+ depending on a probabilistic function.
 
 \subsection{}\label{}
 
