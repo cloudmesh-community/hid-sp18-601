@@ -17,8 +17,9 @@
 \begin{abstract}
 
 After funding was cut SETI lauched SETI$@$Home, a public volunteer computer 
-via the internet. Using this software users donate idle CPU time for SETI to do 
-calculations~\cite{hid-sp18-601-www-sathome-about}. It was released in 1999 and 
+via the internet. Using this software users donate idle CPU time for SETI to do
+ calculations~\cite{hid-sp18-601-www-sathome-about}. It was released in 
+ 1999 and 
 one of its goals was to prove the viability of volunteer computing. This goal 
 has succeded completly. SETI$@$Home was inspiration for several similar
 project~\cite{hid-sp18-601-www-boinc-projects}, one of each is the 
@@ -40,17 +41,19 @@ listening to radio signals and trying to determine if they are not human made
 and neither are natural. 
 
 As any signal coming from another sapient form of life would come from great 
-distances it would be a very weak signal. In addition most of the signal picked 
-up by a radio telescope that is not man made is noise, from celestial bodies 
+distances it would be a very weak signal. In addition most of the signal picked
+ up by a radio telescope that is not man made is noise, from celestial bodies 
 and from the electronics of the equipment 
-itself~\cite{hid-sp18-601-paper-anderson2002seti}. All of this makes finding an 
-actual signal a hard endeavor, as the hypothetical alien radio message would be 
+itself~\cite{hid-sp18-601-paper-anderson2002seti}. All of this makes finding an
+ actual signal a hard endeavor, as the hypothetical alien radio message would 
+ be
 buried in that noise.
 
 Due to the signal to noise ratio being so unfavorable SETI uses supercomputers 
 to make the bulk of their calculations. In 1995 using a network of volunteer 
 computers to make the calculations instead was 
-proposed~\cite{hid-sp18-601-book-foster1999carl}. They use CPU time that would
+proposed~\cite{hid-sp18-601-book-foster1999carl}. They use CPU time that 
+would 
 be idle, meaning that users would not notice any performance difference on 
 their machines. Although cheaper than a super computer this approach is 
 not free. It requires a network bandwidth big enough
@@ -62,7 +65,8 @@ SET$@$Home is one of SETI's signal search
 programs~\cite{hid-sp18-601-www-seti-programs}. Although SET$@$Home ends up 
 having the most computing power of all the programs it covers the lowest range 
 of frequencies. This is because of the fact that data has to be distributed. The 
-way SET$@$Home compensates this is by having the biggest frequency resolution of 
+way SET$@$Home compensates this is by having the biggest frequency resolution 
+of 
 the programs~\cite{hid-sp18-601-paper-korpela2001seti}. 
  
 \section{How SETI$@$home distributes data and how the
@@ -72,7 +76,8 @@ data is analyzed}\label{hid-sp18-601-section-howworks}
 of nodes}\label{hid-sp18-601-subsection-data-dist}
 
 The data comes from the Arecibo radio telescope in Puerto Rico. As the facility
-does not have high speed internet the data must first be send by regular mail to
+does not have high speed internet the data must first be send by regular mail 
+to
  Berkeley~\cite{hid-sp18-601-www-sathome-howworks}. Once there the data is 
  divided in ``work units'', which size is 250 kibibytes, and distributed to the 
  collaborators' computers on the network.
@@ -88,12 +93,14 @@ The data to be analyzed are radio wave. The frequency range of the waves
 analized in the SETI$@$Home project is from 1418MHz to 1421MHz organized in 
 10Khz pieces~\cite{hid-sp18-601-paper-anderson2002seti}. A work unit is 100 
 seconds of the recording of one of this 
-slices~\cite{hid-sp18-601-www-sathome-howworks}. How the data is to be analyzed 
+slices~\cite{hid-sp18-601-www-sathome-howworks}. How the data is to be 
+analyzed 
 will be discussed in Subsection~\ref{hid-sp18-601-subsection-nodes-work}.
 
 Once the data is separated into work units they are sent to a work 
 unit storage and a database server~\cite{hid-sp18-601-book-foster1999carl}. 
-The database and storage communicate with a data/result server, responsible for 
+The database and storage communicate with a data/result server, responsible
+ for 
 communicating with the nodes, and a garbage collector, responsible for 
 removing flagged data from the 
 storage
@@ -114,7 +121,8 @@ deletion~\cite{hid-sp18-601-paper-anderson2002seti}. This method has
 a downside of some work units never producing results. The fraction of work
 units that don't produce results can be made small by increasing \textit{M}. 
 Increasing \textit{M} too much, however, would result in the same 
-bottleneck~\cite{hid-sp18-601-paper-anderson2002seti}. If \textit{M} is set too 
+bottleneck~\cite{hid-sp18-601-paper-anderson2002seti}. If \textit{M} is set 
+too 
 big, however, the bottleneck may continue.
 
 The nodes get new work units as soon as they return the results for the 
@@ -136,7 +144,8 @@ representative result is chosen.
 The other function of result handling is accounting. The server creates 
 log entries with information about the node, for instance it's CPU type and 
 user. This is done both to flag malicious users and give credit for
-the users that found an alien signal~\cite{hid-sp18-601-paper-anderson2002seti}.
+the users that found an alien 
+signal~\cite{hid-sp18-601-paper-anderson2002seti}.
 
 \subsection{Signal type and signal 
 distortion}\label{hid-sp18-601-subsection-signal}
@@ -178,7 +187,8 @@ signal~\cite{hid-sp18-601-www-sathome-interference} the SETI$@$home team looks
         \centering
         \includegraphics[width=0.35\textwidth]{figures/narrow_pulsed.pdf}
         \caption{Example of a Gaussian pulsed narrowband
-        signal~\cite{hid-sp18-601-www-sathome-howworks}}\label{narrowbandfigure}
+        signal~\cite{hid-sp18-601-www-sathome-howworks}
+		}\label{narrowbandfigure}
 \end{figure*}
 
  A kind of distortion that will happen to signals that have traveled to Earth
@@ -210,10 +220,12 @@ Once the nodes have their data they start the analysis by fixing possible
 Doppler shifts. This is the most time consuming task, as the signal needs to be 
 broken down into units of Hz and nHz, this units are $10^{-3}$ to $10^{-6}$ 
 times smaller than the original signal, and shifter by a few 
-nHz~\cite{hid-sp18-601-www-sathome-howworks}. Once the signal is free of Doppler
+nHz~\cite{hid-sp18-601-www-sathome-howworks}. Once the signal is free of 
+Doppler
  effects the node starts to search for a signal compatible with an 
 extra-terrestrial source
-~\cite{hid-sp18-601-www-sathome-howworks,hid-sp18-601-paper-cocconi1959searching}.
+~\cite{hid-sp18-601-www-sathome-howworks,
+hid-sp18-601-paper-cocconi1959searching}.
 
 This very fine Doppler de-shifting may actually over shift the 
 signal~\cite{hid-sp18-601-www-sathome-howworks}, so the whole
@@ -225,7 +237,8 @@ operations for one work unit.
 Signals that show a possibility of being of extra-terrestrial, \textit{i.e.} 
 have a strong power for a combination of the aforementioned parameters, are then 
  checked for human contamination. The signal must be 
-a Gaussian with a 12 second period~\cite{hid-sp18-601-paper-anderson2002seti} as
+a Gaussian with a 12 second period~\cite{hid-sp18-601-paper-anderson2002seti} 
+as
 mentioned in Subsection~\ref{hid-sp18-601-subsection-signal}.
 
 This process is only for finding continuous signals, as the extra-terrestrial 
@@ -244,7 +257,8 @@ This algorithm is capable of detecting signals that would be lost in the noise.
 In total, a node will perform between 2.5 trillion and 3.8 trillion operations 
 for each work unit~\cite{hid-sp18-601-www-sathome-howworks}. 
 This massive amount of operations can only be realistically 
-be done by either a super-computer (costly) or a huge cloud of computers. As the
+be done by either a super-computer (costly) or a huge cloud of computers. As 
+the
  computers are volunteers this method has almost no cost. 
 
 
@@ -254,7 +268,8 @@ be done by either a super-computer (costly) or a huge cloud of computers. As the
 SET$@$Home may not have yet found signs of extra terrestrial intelligence, it 
 has, however, managed to spurt the volunteer cloud computing movement. Over 50
 research initiatives use distributed 
-computing~\cite{hid-sp18-601-www-boinc-projects}. This enoumous success is, in a 
+computing~\cite{hid-sp18-601-www-boinc-projects}. This enoumous success is, 
+in a 
 way, hurting SET$@$Home, as it has to compete for volunteers. 
 
 
