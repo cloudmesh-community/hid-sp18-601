@@ -20,11 +20,12 @@ paths:
   /Sub:
     post:
       description: 'creates or updates subscriber with name sub_name'
-      operationID: createSubscriber
+      
       produces:
         - 'application/json'
-      parameters:
-        - name: sub_name
+      responses:
+        200:
+            description: 'created or modified subscriber'
 definitions:
   Sub:
     type: "object"
